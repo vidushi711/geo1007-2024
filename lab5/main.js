@@ -72,7 +72,7 @@ register_geocoder = function (mapInstance) {
   var geocoder = L.Control.geocoder({
     defaultMarkGeocode: false
   })
-    .on('markgeocode', function(e) {
+    .on('markgeocode', function (e) {
       clear()
       var bbox = e.geocode.bbox;
       polygon = L.polygon([
@@ -83,7 +83,7 @@ register_geocoder = function (mapInstance) {
       ]);
       mapInstance.addLayer(polygon);
       mapInstance.fitBounds(polygon.getBounds());
-      setTimeout(clear, 2500); // Clear the polygon after 2500 milliseconds
+      setTimeout(clear, 2500);
     })
     .addTo(mapInstance);
   return geocoder;
