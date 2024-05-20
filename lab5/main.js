@@ -72,20 +72,20 @@ register_geocoder = function (mapInstance) {
   var geocoder = L.Control.geocoder({
     defaultMarkGeocode: false
   })
-  .on('markgeocode', function(e) {
-    clear()
-    var bbox = e.geocode.bbox;
-    polygon = L.polygon([
-      bbox.getSouthEast(),
-      bbox.getNorthEast(),
-      bbox.getNorthWest(),
-      bbox.getSouthWest()
-    ]);
-    mapInstance.addLayer(polygon);
-    mapInstance.fitBounds(polygon.getBounds());
-    setTimeout(clear, 2500); // Clear the polygon after 2500 milliseconds
-  })
-  .addTo(mapInstance);
+    .on('markgeocode', function(e) {
+      clear()
+      var bbox = e.geocode.bbox;
+      polygon = L.polygon([
+        bbox.getSouthEast(),
+        bbox.getNorthEast(),
+        bbox.getNorthWest(),
+        bbox.getSouthWest()
+      ]);
+      mapInstance.addLayer(polygon);
+      mapInstance.fitBounds(polygon.getBounds());
+      setTimeout(clear, 2500); // Clear the polygon after 2500 milliseconds
+    })
+    .addTo(mapInstance);
   return geocoder;
 }
 
