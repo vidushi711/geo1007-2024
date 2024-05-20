@@ -88,6 +88,4 @@ register_geocoder = function (mapInstance) {
     .addTo(mapInstance);
   return geocoder;
 }
-
-// Assuming 'map' is already defined as your Leaflet map instance
 register_geocoder(map)
