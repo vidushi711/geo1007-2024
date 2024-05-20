@@ -1,7 +1,7 @@
 html,
 body {
-    width: 80vw;
-    height: 80vh;
+    width: 100%; /*lab5: VB updated meta tag in html and wd/ht in css */
+    height: 100%;
     overflow: hidden;
     padding: 0;
     margin: 0;
